@@ -1,101 +1,68 @@
 import Image from "next/image";
+import Link from "next/link";
+import Logo from "../assets/logo.svg";
+import LandingImg from "../assets/main.svg";
+import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--primary),transparent_35%)] opacity-20" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <header className="fixed mx-auto flex w-screen items-center justify-between px-4 py-6 sm:px-8">
+        <Link href="/" className="inline-flex items-center">
+          <Image src={Logo} alt="Jobify logo" className="h-10 w-auto" />
+        </Link>
+
+        <div className="flex items-center gap-2">
+          <Button asChild variant="outline">
+            <Link href="/add-job">Get Started</Link>
+          </Button>
+          <ThemeToggle />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </header>
+
+      <section className="mx-auto grid min-h-[calc(100vh-88px)] max-w-6xl items-center gap-12 px-4 py-12 sm:px-8 lg:grid-cols-[1fr_460px]">
+        <div className="max-w-2xl">
+          <div className="mb-6 inline-flex rounded-full border bg-card px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm">
+            Track applications. Stay organised. Get hired.
+          </div>
+
+          <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+            Job tracking made{" "}
+            <span className="bg-linear-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+              simple
+            </span>
+          </h1>
+
+          <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
+            Keep all your job applications, interviews, notes, and progress in
+            one clean dashboard so you always know what to do next.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button size="lg" asChild>
+              <Link href="/add-job">Start Tracking</Link>
+            </Button>
+
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/jobs">View Jobs</Link>
+            </Button>
+          </div>
+        </div>
+
+        <div className="relative hidden lg:block">
+          <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-primary/10 blur-3xl" />
+
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src={LandingImg}
+            alt="Job tracking dashboard illustration"
+            priority
+            className="h-auto w-full"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+      </section>
+    </main>
   );
 }
