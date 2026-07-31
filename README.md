@@ -28,11 +28,7 @@ A modern full-stack job application tracker built with **Next.js 14**, **TypeScr
 - TypeScript
 - Tailwind CSS v4
 - shadcn/ui
-- Base UI
-- Radix UI
-- Recharts
 - React Hook Form
-- Sonner
 
 ### Backend
 
