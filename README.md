@@ -23,10 +23,10 @@ A modern full-stack job application tracker built with **Next.js 14**, **TypeScr
 
 ### Frontend
 
-- Next.js 14
-- React 18
+- Next.js
+- React
 - TypeScript
-- Tailwind CSS v4
+- Tailwind CSS
 - shadcn/ui
 
 ### Backend
