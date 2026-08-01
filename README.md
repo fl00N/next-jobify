@@ -33,6 +33,7 @@ A modern full-stack job application tracker built with **Next.js 14**, **TypeScr
 - Next.js Server Actions
 - Prisma ORM
 - PostgreSQL
+- Render
 
 ### Authentication
 
